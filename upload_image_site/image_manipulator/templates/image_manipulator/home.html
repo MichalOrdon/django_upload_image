@@ -3,7 +3,8 @@
 {% block content %}
     {% for image in images %}
       <article class="media content-section">
-          <img class="article-img" src="{% static 'assets/images/' %}{{ image }}" alt="{{ image }}">
+          <img class="article-img" src="{% static 'images/' %}{{ image }}" alt="{{ image }}">
+<!--          <img class="article-img" src="{% static 'pepel.jpg' %}">-->
       </article>
     {% endfor %}
 
