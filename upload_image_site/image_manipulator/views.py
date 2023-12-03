@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
+from .forms import ImageUploadForm
 import os
 
 
@@ -14,3 +15,15 @@ def home(request):
         images = []
 
     return render(request, 'image_manipulator/home.html', {'images': images})
+
+
+def add_image(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')  # Przekierowanie gdzieś po dodaniu obrazka
+    else:
+        form = ImageUploadForm()
+
+    return render(request, 'image_manipulator/add_image.html', {'form': form})

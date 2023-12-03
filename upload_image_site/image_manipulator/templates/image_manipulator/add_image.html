@@ -1,0 +1,16 @@
+{% extends "image_manipulator/base.html" %}
+{% load static %}
+{% block content %}
+
+    <h2>Add new Image</h2>
+    <!-- Formularz do dodawania obrazków -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Image</button>
+<!--        &lt;!&ndash; Dodaj pola formularza do dodawania obrazków &ndash;&gt;-->
+<!--        <input type="file" name="image" accept="image/*">-->
+<!--        <input type="submit" value="Add Image">-->
+    </form>
+    <a class="btn btn-outline-secondary" href="{% url 'home' %}">Cancel</a>
+{% endblock %}

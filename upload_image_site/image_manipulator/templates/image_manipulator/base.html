@@ -14,7 +14,7 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
       <div class="container">
-        <a class="navbar-brand mr-4" href="#">TextLogo/Tytuł_strony</a>
+        <a class="navbar-brand mr-4" href="{% url 'home' %}">Tytuł_strony</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,16 +33,7 @@
     </nav>
   </header>
   <main role="main" class="container">
-    <h2>Upload image:</h2>
-<!--      przycisk który prowadzi na stronę gdzie dodajesz image-->
-    <div class="d-grid gap-5">
-      <button class="btn btn-primary" type="button">Button</button>
-      <button class="btn btn-primary" type="button">Button</button>
-    </div>
-    <h2>Your images:</h2>
-    <div class="row">
-      {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
   </main>
 
   <!-- Optional JavaScript -->
